@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class ConvertirTemperatura extends JFrame {
 
-    // component
+    // Componentes
     JTextField txtFromTemp, txtToTemp;
     JLabel lblFromTemp, lblToTemp, lblToTempbox;
     JRadioButton radFromCelsius, radFromFahrenheit, radFromKelvin, radToCelsius, radToFahrenheit, radToKelvin;
@@ -15,7 +15,8 @@ public class ConvertirTemperatura extends JFrame {
     ButtonGroup bgFrom, bgTo;
     JButton btnConvert, btnExit;
 
-    // constructor
+    // Constructor
+    
     public ConvertirTemperatura() {
         super("Temperatura");
 

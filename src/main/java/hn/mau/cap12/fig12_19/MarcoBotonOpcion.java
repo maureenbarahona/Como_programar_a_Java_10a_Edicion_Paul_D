@@ -41,8 +41,9 @@ public class MarcoBotonOpcion extends JFrame {
         setLayout(new FlowLayout());
 
         campoTexto = new JTextField("Observe el cambio en el estilo del tipo de letra", 35);
-        add(campoTexto); // agrega campoTexto a JFrame
-// crea los botones de opción
+        add(campoTexto); // agrega campoTexto a JFrame 
+
+        // crea los botones de opción
         simpleJRadioButton = new JRadioButton("Simple", true);
         negritaJRadioButton = new JRadioButton("Negrita", false);
         cursivaJRadioButton = new JRadioButton("Cursiva", false);        
@@ -56,7 +57,7 @@ public class MarcoBotonOpcion extends JFrame {
         add(tipLetraArialJRadioButton); // agrega boton Tipo de letra Arial
         
         
-// crea una relación lógica entre los objetos JRadioButton
+        // crea una relación lógica entre los objetos JRadioButton
         grupoOpciones = new ButtonGroup(); // crea ButtonGroup
         grupoOpciones.add(simpleJRadioButton); // agrega simple al grupo
         grupoOpciones.add(negritaJRadioButton); // agrega negrita al grupo
@@ -73,15 +74,12 @@ public class MarcoBotonOpcion extends JFrame {
         
         
         campoTexto.setFont(tipoLetraSimple);
-// registra eventos para los objetos JRadioButton
-        simpleJRadioButton.addItemListener(
-                new ManejadorBotonOpcion(tipoLetraSimple));
-        negritaJRadioButton.addItemListener(
-                new ManejadorBotonOpcion(tipoLetraNegrita));
-        cursivaJRadioButton.addItemListener(
-                new ManejadorBotonOpcion(tipoLetraCursiva));
-        negritaCursivaJRadioButton.addItemListener(
-                new ManejadorBotonOpcion(tipoLetraNegritaCursiva));
+        
+       // registra eventos para los objetos JRadioButton
+        simpleJRadioButton.addItemListener(new ManejadorBotonOpcion(tipoLetraSimple));
+        negritaJRadioButton.addItemListener(new ManejadorBotonOpcion(tipoLetraNegrita));
+        cursivaJRadioButton.addItemListener(new ManejadorBotonOpcion(tipoLetraCursiva));
+        negritaCursivaJRadioButton.addItemListener(new ManejadorBotonOpcion(tipoLetraNegritaCursiva));
         tipLetraArialJRadioButton.addItemListener(new ManejadorBotonOpcion(tipoLetraArial));
         
 
