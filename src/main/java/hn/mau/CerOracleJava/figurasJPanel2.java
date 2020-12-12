@@ -8,6 +8,8 @@ package hn.mau.CerOracleJava;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Polygon;
 import javax.swing.JFrame;
 
 /**
@@ -35,9 +37,26 @@ public class figurasJPanel2 extends JFrame {
         g.fillOval(x, y, r, r);
     }
 
+    public void drawTriagle(Graphics g, int R, int G, int B) {
+        int xpoints[] = {325, 325, 445, 445};
+        int ypoints[] = {100, 160, 100, 160};
+        int npoints = 4;
+
+        Color cColor = new Color(R, G, B);
+        g.setColor(cColor);
+        g.fillPolygon(xpoints, ypoints, npoints);
+
+    }
+
+    public void paint(Polygon shape, Graphics g, Color color, int side) {
+        g.setColor(color);
+        g.fillPolygon(shape);
+    }
+
     class Lienzo extends Canvas {
 
         public void paint(Graphics g) {
+            Graphics2D g2d = (Graphics2D) g;
             //Area del cielo
             Color cCielo = new Color(0, 147, 221);
             g.setColor(cCielo);
@@ -52,6 +71,108 @@ public class figurasJPanel2 extends JFrame {
             Color cSol = new Color(255, 245, 0);
             g.setColor(cSol);
             drawCircle(g, 220, 100, 150);
+
+            //Rayo
+            // rellena polígono con dos arreglos
+             int[] valoresX1 = {80, 80, 150, 150};
+            int[] valoresY1 = {60, 70, 80, 70};
+            g.fillPolygon(valoresX1, valoresY1, 4);
+            
+            int[] valoresX3 = {60, 60, 150, 150};
+            int[] valoresY3 = {40, 50, 60, 50};
+            g.fillPolygon(valoresX3, valoresY3, 4);
+
+            //Mariposa 
+            //drawTriagle(g, 246, 195, 145);
+            Color cMariposa1 = new Color(243, 194, 142);
+            Color cCMariposa1 = new Color(240, 155, 160);
+            Color cMariposa2 = new Color(145, 28, 120);
+            Color cCMariposa2 = new Color(186, 179, 213);
+            //Ala 1
+            int xMA1[] = {409, 455, 489};
+            int yMA1[] = {250, 200, 260};
+            g.setColor(cMariposa1);
+            g.fillPolygon(xMA1, yMA1, 3);
+
+            g.setColor(cCMariposa1);
+            drawCircle(g, 453, 230, 30);
+
+            int xMA2[] = {330, 380, 400};
+            int yMA2[] = {250, 200, 245};
+            g.setColor(cMariposa1);
+            g.fillPolygon(xMA2, yMA2, 3);
+
+            g.setColor(cCMariposa1);
+            drawCircle(g, 373, 230, 30);
+
+            //Ala2
+            int xM1[] = {409, 419, 439};
+            int yM1[] = {250, 280, 260};
+            g.setColor(cMariposa2);
+            g.fillPolygon(xM1, yM1, 3);
+
+            g.setColor(cCMariposa2);
+            drawCircle(g, 423, 262, 13);
+
+            int xM2[] = {394, 372, 364};
+            int yM2[] = {250, 280, 260};
+            g.setColor(cMariposa2);
+            g.fillPolygon(xM2, yM2, 3);
+
+            g.setColor(cCMariposa2);
+            drawCircle(g, 375, 262, 13);
+
+            Color cBody = new Color(227, 120, 22);
+            g.setColor(cBody);
+            drawCircle(g, 420, 215, 25);
+            drawCircle(g, 410, 238, 20);
+            drawCircle(g, 400, 255, 15);
+            drawCircle(g, 400, 269, 10);
+            drawCircle(g, 400, 280, 8);
+            drawCircle(g, 400, 289, 5);
+
+            //Mariposa 2
+            //Ala 1
+            int xMA21[] = {909, 955, 989};
+            int yMA21[] = {250, 200, 260};
+            g.setColor(cMariposa1);
+            g.fillPolygon(xMA21, yMA21, 3);
+
+            g.setColor(cCMariposa1);
+            drawCircle(g, 953, 230, 30);
+
+            int xMA22[] = {830, 880, 900};
+            int yMA22[] = {250, 200, 245};
+            g.setColor(cMariposa1);
+            g.fillPolygon(xMA22, yMA22, 3);
+
+            g.setColor(cCMariposa1);
+            drawCircle(g, 873, 230, 30);
+
+            //Ala2
+            int xM21[] = {909, 919, 939};
+            int yM21[] = {250, 280, 260};
+            g.setColor(cMariposa2);
+            g.fillPolygon(xM21, yM21, 3);
+
+            g.setColor(cCMariposa2);
+            drawCircle(g, 923, 262, 13);
+
+            int xM22[] = {894, 872, 864};
+            int yM22[] = {250, 280, 260};
+            g.setColor(cMariposa2);
+            g.fillPolygon(xM22, yM22, 3);
+
+            g.setColor(cCMariposa2);
+            drawCircle(g, 875, 262, 13);
+
+            g.setColor(cBody);
+            drawCircle(g, 900, 215, 25);
+            drawCircle(g, 900, 238, 20);
+            drawCircle(g, 900, 255, 15);
+            drawCircle(g, 900, 269, 10);
+            drawCircle(g, 910, 280, 8);
+            drawCircle(g, 920, 289, 5);
 
             //Nubes
             g.setColor(Color.black);
@@ -191,7 +312,7 @@ public class figurasJPanel2 extends JFrame {
             g.drawOval(240, 285, 20, 40);
             g.setColor(cFrutos);
             g.fillOval(240, 285, 20, 40);
-            
+
             g.setColor(Color.black);
             g.drawOval(220, 330, 40, 25);
             g.setColor(cFrutos);
@@ -206,7 +327,7 @@ public class figurasJPanel2 extends JFrame {
 
             g.setColor(cRamas);
             g.fillPolygon(x2, y2, 3);
-            
+
             //Frutos 2
             g.setColor(Color.black);
             g.drawOval(1010, 345, 30, 20);
@@ -222,7 +343,7 @@ public class figurasJPanel2 extends JFrame {
             g.drawOval(1040, 385, 20, 40);
             g.setColor(cFrutos);
             g.fillOval(1040, 385, 20, 40);
-            
+
             g.setColor(Color.black);
             g.drawOval(1020, 430, 40, 25);
             g.setColor(cFrutos);
