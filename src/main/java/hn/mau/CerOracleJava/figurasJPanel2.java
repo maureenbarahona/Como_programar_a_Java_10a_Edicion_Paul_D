@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
+import java.awt.geom.Line2D;
 import javax.swing.JFrame;
 
 /**
@@ -73,14 +74,13 @@ public class figurasJPanel2 extends JFrame {
             drawCircle(g, 220, 100, 150);
 
             //Rayo
-            // rellena polígono con dos arreglos
-             int[] valoresX1 = {80, 80, 150, 150};
-            int[] valoresY1 = {60, 70, 80, 70};
-            g.fillPolygon(valoresX1, valoresY1, 4);
+            g2d.setPaint(cSol);
+            g2d.draw(new Line2D.Double(80, 20, 380, 150));
+            g2d.draw(new Line2D.Double(380, 20, 80, 150));
+            g.fillRect(80, 85, 300, 20);
+            g.fillRect(210, 10, 20, 180);
             
-            int[] valoresX3 = {60, 60, 150, 150};
-            int[] valoresY3 = {40, 50, 60, 50};
-            g.fillPolygon(valoresX3, valoresY3, 4);
+       
 
             //Mariposa 
             //drawTriagle(g, 246, 195, 145);
