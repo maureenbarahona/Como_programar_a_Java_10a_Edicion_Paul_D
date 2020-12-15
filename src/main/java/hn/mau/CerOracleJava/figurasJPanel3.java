@@ -5,6 +5,7 @@
  */
 package hn.mau.CerOracleJava;
 
+import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -227,29 +228,123 @@ public class figurasJPanel3 extends JFrame {
             g.fillOval(480, 400, 490, 355);
 
             //nubes
-            g.setColor(Color.white);
-            g.fillOval(600, 150, 180, 40);
-            g.fillOval(550, 150, 170, 30);
-            g.fillOval(650, 170, 160, 20);
+            //Nubes
+            g.setColor(Color.WHITE);
+            drawCircle(g, 800, 150, 100);
+            drawCircle(g, 770, 155, 100);
+            drawCircle(g, 750, 145, 100);
+            drawCircle(g, 720, 158, 100);
+            drawCircle(g, 710, 140, 100);
+            drawCircle(g, 700, 160, 100);
+            drawCircle(g, 730, 172, 100);
+            drawCircle(g, 700, 180, 100);
+            drawCircle(g, 690, 150, 100);
+            drawCircle(g, 650, 150, 100);
+            drawCircle(g, 580, 172, 100);
+            drawCircle(g, 550, 155, 100);
+            drawCircle(g, 590, 155, 100);
+            drawCircle(g, 610, 150, 100);
+            drawCircle(g, 630, 170, 100);
+            drawCircle(g, 660, 190, 100);
 
-            Polygon poligono24 = new Polygon();
-            poligono24.addPoint(195, 450);
-            poligono24.addPoint(210, 430);
-            poligono24.addPoint(203, 400);
-            poligono24.addPoint(240, 430);
-            poligono24.addPoint(225, 450);
-            g.setColor(Color.YELLOW);
-            g.fillPolygon(poligono24);
+            //Tree
+            Color cTree = new Color(55, 184, 91);
+            g.setColor(cTree);
+            g.fillArc(-10, 90, 120, 80, 0, 120);
+            g.fillArc(-10, 70, 130, 80, 0, 360);
+            g.fillArc(-10, 140, 110, 100, 0, 360);
+            g.fillArc(0, 90, 60, 90, 0, 360);
+            g.fillArc(-10, 300, 120, 80, 0, 360);
+            g.fillArc(-10, 270, 130, 80, 0, 360);
+            g.fillArc(-10, 240, 110, 100, 0, 360);
+            g.fillArc(0, 210, 60, 90, 0, 360);
 
 //Train
+            Color cCopiloto = new Color(250, 102, 6);
+            g.setColor(Color.BLACK);
+            g.fillRect(230, 350, 130, 205);
+
+            g.setColor(cCopiloto);
+            g.fillRect(230, 350, 125, 200);
+            
+         
+            g.setColor(Color.BLACK);
+            g.fillRect(240, 360, 110, 60);
+            
+            
+            g.setColor(Color.BLACK);
+            drawCircle(g, 290, 550, 110);
+
+            Color cCorange = new Color(237, 109, 16);
+
+            g.setColor(cCorange);
+            g.fillRoundRect(220, 305, 150, 40, 20, 20);
+
+            Color cTie = new Color(251, 202, 11);
+            g.setColor(cTie);
+            drawCircle(g, 290, 550, 100);
+
             Color cBagones = new Color(201, 9, 4);
+            Color cLocomotore = new Color(254, 158, 93);
             TrainCar tc1 = new TrainCar(cBagones, 370, 450);
+
             TrainCar tc2 = new TrainCar(cBagones, 540, 450);
             TrainCar tc3 = new TrainCar(cBagones, 710, 450);
 
+            int xPos = 70;
+            int yPos = 450;
+
+            TrainCar loc = new TrainCar(cLocomotore, xPos, yPos);
+
+            Polygon funnel = new Polygon();
+            funnel.addPoint(xPos + 20, yPos);
+            funnel.addPoint(xPos + 20, yPos);
+            funnel.addPoint(xPos, yPos - 50);
+            funnel.addPoint(xPos, yPos - 60);
+            funnel.addPoint(xPos + 60, yPos - 60);
+            funnel.addPoint(xPos + 60, yPos - 50);
+            funnel.addPoint(xPos + 40, yPos - 30);
+            funnel.addPoint(xPos + 40, yPos);
+            Color cfunnel = new Color(227, 112, 110);
+            g.setColor(cfunnel);
+            g.fillPolygon(funnel);
+
+            Polygon scoop = new Polygon();
+            scoop.addPoint(xPos, yPos + 50);
+            scoop.addPoint(xPos, yPos + 100);
+            scoop.addPoint(xPos - 50, yPos + 100);
+            Color cScoop = new Color(206, 6, 7);
+            g.setColor(cScoop);
+            g.fillPolygon(scoop);
+
+            loc.drawTrainCar(g);
+
             tc1.drawTrainCar(g);
+            Color ctc1 = new Color(255, 251, 3);
+            g.setColor(ctc1);
+
+            drawCircle(g, 450, 500, 75);
+
             tc2.drawTrainCar(g);
+            Color ctc2 = new Color(3,4,248);
+            g.setColor(ctc2);
+            g.fillRect(570, 480, 100, 40);
+            
             tc3.drawTrainCar(g);
+            //hexagono
+            Color ctc3 = new Color(67,178,81);
+            g.setColor(ctc3);
+            Polygon hexa = new Polygon();
+            g2d.setStroke(new BasicStroke(5.0f));
+            
+            hexa.addPoint(800, 480);
+            hexa.addPoint(725, 550);
+            hexa.addPoint(800, 600);
+            hexa.addPoint(875, 600);
+            hexa.addPoint(925, 550);
+            hexa.addPoint(875, 480);
+            g.fillPolygon(hexa);
+            
 
         }
     }
