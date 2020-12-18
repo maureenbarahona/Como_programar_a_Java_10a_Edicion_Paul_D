@@ -337,12 +337,13 @@ public class figurasJPanel3 extends JFrame {
             Polygon hexa = new Polygon();
             g2d.setStroke(new BasicStroke(5.0f));
             
-            hexa.addPoint(800, 480);
-            hexa.addPoint(725, 550);
-            hexa.addPoint(800, 600);
-            hexa.addPoint(875, 600);
-            hexa.addPoint(925, 550);
-            hexa.addPoint(875, 480);
+            hexa.addPoint(779, 460);
+            hexa.addPoint(829, 460);
+            hexa.addPoint(849, 490);
+            hexa.addPoint(829, 520);
+            hexa.addPoint(779, 520);
+            hexa.addPoint(759, 490);
+            hexa.addPoint(779,460);
             g.fillPolygon(hexa);
             
 
